@@ -5,14 +5,24 @@ StateMachine::StateMachine()
 {
 }
 
-StateMachine::StateMachine(std::map<std::string, State*> states)
+StateMachine::StateMachine(std::map<int, State*> states)
 {
     this->states = states;
 }
 
-void StateMachine::change(std::string stateName, State& state)
+void StateMachine::change(int stateName, State* state)
 {
-    *(this->states[stateName]) = state;
+    if (state != nullptr)
+    {
+        if (
+            this->states.find(stateName) != this->states.end() &&
+            this->states[stateName] != nullptr
+            )
+            delete this->states[stateName];
+        
+        this->states[stateName] = state;
+    }
+    
     this->current = stateName;
 }
 
@@ -23,4 +33,5 @@ void StateMachine::update(sf::Time dt)
 
 void StateMachine::render()
 {
+    this->states[current]->render();
 }

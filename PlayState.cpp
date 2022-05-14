@@ -3,35 +3,35 @@
 
 PlayState::PlayState()
 {
-    std::cout << "default constructor\n";
+    std::cout << "playstate default constructor\n";
 }
 
 PlayState::PlayState(const PlayState& state)
 {
-    std::cout << "copy constructor\n";
+    std::cout << "playstate copy constructor\n";
 }
 
 PlayState::~PlayState()
 {
-    std::cout << "destructor\n";
+    std::cout << "playstate destructor\n";
 }
 
-void PlayState::enter()
+void PlayState::enter(const State& state)
 {
-    std::cout << "enter\n";
+    std::cout << "playstate enter\n";
 }
 
 void PlayState::exit()
 {
-    std::cout << "exit\n";
+    std::cout << "playstate exit\n";
 }
 
 void PlayState::update(sf::Time dt)
 {
-    std::cout << "update\n";
+    std::cout << "playstate update\n";
 }
 
 void PlayState::render()
 {
-    std::cout << "render\n";
+    std::cout << "playstate render\n";
 }

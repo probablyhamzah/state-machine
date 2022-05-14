@@ -1,13 +1,13 @@
 #include "State.hpp"
 
-class PlayState : public State
+class GameOverState : public State
 {
 private:
     int score;
 public:
-    PlayState();
-    PlayState(const PlayState& state);
-    ~PlayState();
+    GameOverState();
+    GameOverState(const GameOverState& state);
+    ~GameOverState();
 
     void enter(const State& state);
     void exit();
