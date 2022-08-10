@@ -26,7 +26,7 @@ Map the state names (defined in StateMachine.hpp) to the states we have just ini
 std::map<int, State*> states;
 states[PLAY_STATE] = play;
 states[GAME_OVER_STATE] = gameover;
- StateMachine machine(states);
+StateMachine machine(states);
 ```
 
 You can now update, render, or change to a different state. The state machine keeps track of which state is currently running and performs the functions accordingly.
@@ -42,7 +42,9 @@ machine.change(GAME_OVER_STATE); // switch to GAME_OVER_STATE
 machine.update(dt); // update GAME_OVER_STATE
     
 PlayState* newState = new PlayState(); // Create a new state...
-machine.change(PLAY_STATE, newState); // ...and switch to it. The existing PLAY_STATE will be overwritten by the new one.
+machine.change(PLAY_STATE, newState); // ...and switch to it.
+//The existing PLAY_STATE will be overwritten by the new one.
+
 machine.update(dt); // update PLAY_STATE
 ```
 
