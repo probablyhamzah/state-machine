@@ -43,7 +43,7 @@ machine.update(dt); // update GAME_OVER_STATE
     
 PlayState* newState = new PlayState(); // Create a new state...
 machine.change(PLAY_STATE, newState); // ...and switch to it.
-//The existing PLAY_STATE will be overwritten by the new one.
+// The existing PLAY_STATE will be overwritten by the new one.
 
 machine.update(dt); // update PLAY_STATE
 ```
