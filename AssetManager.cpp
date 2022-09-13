@@ -1,8 +1,8 @@
 #include "AssetManager.hpp"
 
-AssetManager() {}
+AssetManager::AssetManager() {}
 
-~AssetManager()
+AssetManager::~AssetManager()
 {
     for (auto it = textures.begin(); it != textures.end(); it++)
     {
@@ -10,7 +10,7 @@ AssetManager() {}
     }
 }
 
-void setTexture(int id, const std::string file, bool repeat)
+void AssetManager::setTexture(int id, const std::string file, bool repeat)
 {
     sf::Texture* texture = new sf::Texture;
 
@@ -21,7 +21,7 @@ void setTexture(int id, const std::string file, bool repeat)
     }
 }
 
-void setPlayerTexture(int id, const std::vector<std::string> files)
+void AssetManager::setPlayerTexture(int id, const std::vector<std::string> files)
 {
     for(int i = 0; i < int(files.size()); i++)
     {
@@ -35,11 +35,11 @@ void setPlayerTexture(int id, const std::vector<std::string> files)
 }
 
     
-const sf::Texture& getTexture(int id) const
+const sf::Texture& AssetManager::getTexture(int id) const
 {
     return *(textures.at(id).get());
 }
-const sf::Texture& getPlayerTexture(int id, int frame) const
+const sf::Texture& AssetManager::getPlayerTexture(int id, int frame) const
 {
     return *(playerTextures.at(id)[frame].get());
 }
