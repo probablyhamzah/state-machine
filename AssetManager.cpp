@@ -2,13 +2,7 @@
 
 AssetManager::AssetManager() {}
 
-AssetManager::~AssetManager()
-{
-    for (auto it = textures.begin(); it != textures.end(); it++)
-    {
-        delete textures[it];
-    }
-}
+AssetManager::~AssetManager() {}
 
 void AssetManager::setTexture(int id, const std::string file, bool repeat)
 {
@@ -17,7 +11,7 @@ void AssetManager::setTexture(int id, const std::string file, bool repeat)
     if (texture->loadFromFile(file))
     {
         texture->setRepeated(repeat);
-        textures[id] = texture;
+        this->textures[id] = texture;
     }
 }
 
@@ -29,7 +23,7 @@ void AssetManager::setPlayerTexture(int id, const std::vector<std::string> files
 
         if(texture->loadFromFile(files[i]))
         {
-            playerTextures[id].push_back(texture);
+            this->playerTextures[id].push_back(texture);
         }
     }
 }
@@ -37,9 +31,9 @@ void AssetManager::setPlayerTexture(int id, const std::vector<std::string> files
     
 const sf::Texture& AssetManager::getTexture(int id) const
 {
-    return *(textures.at(id).get());
+    return *(this->textures.at(id));
 }
 const sf::Texture& AssetManager::getPlayerTexture(int id, int frame) const
 {
-    return *(playerTextures.at(id)[frame].get());
+    return *(this->playerTextures.at(id)[frame]);
 }
