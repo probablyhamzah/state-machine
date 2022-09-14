@@ -2,6 +2,8 @@
 #include <vector>
 #include <map>
 
+#include <SFML/Graphics/Texture.hpp>
+
 class AssetManager
 {
 private:
