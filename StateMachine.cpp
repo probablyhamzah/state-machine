@@ -5,7 +5,7 @@ StateMachine::StateMachine()
 {
 }
 
-StateMachine::StateMachine(std::map<int, State*> states)
+void StateMachine::setStates(std::map<int, State*> states)
 {
     this->states = states;
 }
@@ -24,6 +24,11 @@ void StateMachine::change(int stateName, State* state)
     }
     
     this->current = stateName;
+}
+
+void StateMachine::processInput()
+{
+    this->states[current]->processInput();
 }
 
 void StateMachine::update(sf::Time dt)
