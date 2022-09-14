@@ -1,3 +1,5 @@
+#pragma once
+
 typedef enum GAME_STATE
 {
     PLAY_STATE,

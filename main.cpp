@@ -25,7 +25,6 @@ int main()
     while (window->isOpen())
     {
         timeSinceLastFrame += clock.restart();
-        sf::Event event;
         while (timeSinceLastFrame > dt)
         {
             timeSinceLastFrame -= dt;
