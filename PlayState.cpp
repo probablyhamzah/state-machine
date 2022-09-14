@@ -1,19 +1,29 @@
 #include <iostream>
 #include "PlayState.hpp"
 
-PlayState::PlayState()
+PlayState::PlayState(sf::RenderWindow* window)
 {
-    std::cout << "playstate default constructor\n";
+    this->window = window;
 }
-
+/*
 PlayState::PlayState(const PlayState& state)
 {
     std::cout << "playstate copy constructor\n";
 }
-
+*/
 PlayState::~PlayState()
 {
     std::cout << "playstate destructor\n";
+}
+
+void PlayState::processInput()
+{
+    sf::Event event;
+    while (window->pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+            window->close();
+    }
 }
 
 void PlayState::enter(const State& state)
