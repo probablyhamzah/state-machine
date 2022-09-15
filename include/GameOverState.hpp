@@ -10,9 +10,10 @@ class GameOverState : public State
 private:
     int score;
     sf::RenderWindow* window;
+    StateMachine* machine;
 public:
     GameOverState();
-    GameOverState(sf::RenderWindow* window);
+    GameOverState(sf::RenderWindow* window, StateMachine* machine);
     GameOverState(const GameOverState& state);
     ~GameOverState();
 
