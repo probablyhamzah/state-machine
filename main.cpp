@@ -12,7 +12,7 @@ int main()
     StateMachine* machine = new StateMachine();
     
     PlayState* play = new PlayState(window, machine);
-    GameOverState* gameover = new GameOverState(window);
+    GameOverState* gameover = new GameOverState(window, machine);
    
     std::map<int, State*> states;
     states[PLAY_STATE] = play;
