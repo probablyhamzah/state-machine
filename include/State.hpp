@@ -1,14 +1,12 @@
-#include <SFML/System/Time.hpp>
-#include <SFML/Graphics.hpp>
-
 #pragma once
+
+#include <SFML/System/Time.hpp>
 
 class State
 {
 private:
 public:
     State() {};
-    State(sf::RenderWindow* window) {};
     State(const State& state) {};
     virtual ~State() {};
 
