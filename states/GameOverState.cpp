@@ -6,9 +6,10 @@ GameOverState::GameOverState()
     window = NULL;
 }
 
-GameOverState::GameOverState(sf::RenderWindow* window)
+GameOverState::GameOverState(sf::RenderWindow* window, StateMachine* machine)
 {
     this->window = window;
+    this->machine = machine;
     std::cout << "gameoverstate default constructor\n";
 }
 

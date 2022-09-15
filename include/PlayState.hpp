@@ -1,4 +1,7 @@
+#pragma once
+
 #include "State.hpp"
+#include "StateMachine.hpp"
 #include <SFML/Graphics.hpp>
 
 class PlayState : public State
@@ -6,9 +9,10 @@ class PlayState : public State
 private:
     int score;
     sf::RenderWindow* window;
+    StateMachine* machine;
 public:
     PlayState();
-    PlayState(sf::RenderWindow* window);
+    PlayState(sf::RenderWindow* window, StateMachine* machine);
     PlayState(const PlayState& state);
     ~PlayState();
 

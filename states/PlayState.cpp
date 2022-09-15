@@ -6,9 +6,10 @@ PlayState::PlayState()
     window = NULL;
 }
 
-PlayState::PlayState(sf::RenderWindow* window)
+PlayState::PlayState(sf::RenderWindow* window, StateMachine* machine)
 {
     this->window = window;
+    this->machine = machine;
 }
 
 PlayState::PlayState(const PlayState& state)
