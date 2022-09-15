@@ -7,6 +7,7 @@ private:
     int score;
     sf::RenderWindow* window;
 public:
+    GameOverState();
     GameOverState(sf::RenderWindow* window);
     GameOverState(const GameOverState& state);
     ~GameOverState();

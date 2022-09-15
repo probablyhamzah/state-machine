@@ -7,8 +7,9 @@ private:
     int score;
     sf::RenderWindow* window;
 public:
+    PlayState();
     PlayState(sf::RenderWindow* window);
-    //PlayState(const PlayState& state);
+    PlayState(const PlayState& state);
     ~PlayState();
 
     void enter(const State& state);

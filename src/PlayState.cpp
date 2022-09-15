@@ -1,16 +1,21 @@
 #include <iostream>
 #include "PlayState.hpp"
 
+PlayState::PlayState()
+{
+    window = NULL;
+}
+
 PlayState::PlayState(sf::RenderWindow* window)
 {
     this->window = window;
 }
-/*
+
 PlayState::PlayState(const PlayState& state)
 {
     std::cout << "playstate copy constructor\n";
 }
-*/
+
 PlayState::~PlayState()
 {
     std::cout << "playstate destructor\n";
@@ -18,6 +23,9 @@ PlayState::~PlayState()
 
 void PlayState::processInput()
 {
+    if (window == NULL)
+        return;
+    
     sf::Event event;
     while (window->pollEvent(event))
     {

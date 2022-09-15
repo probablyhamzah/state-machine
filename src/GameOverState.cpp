@@ -1,6 +1,11 @@
 #include <iostream>
 #include "GameOverState.hpp"
 
+GameOverState::GameOverState()
+{
+    window = NULL;
+}
+
 GameOverState::GameOverState(sf::RenderWindow* window)
 {
     this->window = window;
@@ -27,7 +32,9 @@ void GameOverState::exit()
     std::cout << "gameoverstate exit\n";
 }
 
-void GameOverState::processInput() {}
+void GameOverState::processInput()
+{
+}
 
 void GameOverState::update(sf::Time dt)
 {
