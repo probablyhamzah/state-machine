@@ -9,7 +9,7 @@ private:
 public:
     State() {};
     State(sf::RenderWindow* window) {};
-    //State(const State& state) {};
+    State(const State& state) {};
     virtual ~State() {};
 
     virtual void enter(const State& state) = 0;
