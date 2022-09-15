@@ -42,7 +42,7 @@ machine.render(); // render PLAY_STATE
 machine.change(GAME_OVER_STATE); // switch to GAME_OVER_STATE
 machine.update(dt); // update GAME_OVER_STATE
     
-PlayState* newState = new PlayState(states); // Create a new state...
+PlayState* newState = new PlayState(); // Create a new state...
 machine.change(PLAY_STATE, newState); // ...and switch to it.
 // The existing PLAY_STATE will be overwritten by the new one.
 
