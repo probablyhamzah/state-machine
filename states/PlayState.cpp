@@ -4,6 +4,7 @@
 PlayState::PlayState()
 {
     window = NULL;
+    machine = NULL;
 }
 
 PlayState::PlayState(sf::RenderWindow* window, StateMachine* machine)
@@ -32,6 +33,17 @@ void PlayState::processInput()
     {
         if (event.type == sf::Event::Closed)
             window->close();
+        else if (event.type == sf::Event::KeyPressed)
+        {
+            switch (event.key.code)
+            {
+            case sf::Keyboard::C:
+                this->machine->change(GAME_OVER_STATE);
+                break;
+            default:
+                break;
+            }
+        }
     }
 }
 

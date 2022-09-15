@@ -1,6 +1,8 @@
 #pragma once
 
 #include "State.hpp"
+#include "globals.hpp"
+
 #include "StateMachine.hpp"
 #include <SFML/Graphics.hpp>
 
