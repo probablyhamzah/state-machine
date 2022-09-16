@@ -17,8 +17,6 @@ public:
     GameOverState(const GameOverState& state);
     ~GameOverState();
 
-    void enter(const State& state);
-    void exit();
     void processInput();
     void update(sf::Time dt);
     void render();

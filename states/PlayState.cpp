@@ -7,10 +7,11 @@ PlayState::PlayState()
     machine = NULL;
 }
 
-PlayState::PlayState(sf::RenderWindow* window, StateMachine* machine)
+PlayState::PlayState(sf::RenderWindow* window, StateMachine* machine, AssetManager* assets)
 {
     this->window = window;
     this->machine = machine;
+    this->assets = assets;
 }
 
 PlayState::PlayState(const PlayState& state)
@@ -45,16 +46,6 @@ void PlayState::processInput()
             }
         }
     }
-}
-
-void PlayState::enter(const State& state)
-{
-    std::cout << "playstate enter\n";
-}
-
-void PlayState::exit()
-{
-    std::cout << "playstate exit\n";
 }
 
 void PlayState::update(sf::Time dt)

@@ -2,6 +2,7 @@
 #include "PlayState.hpp"
 #include "GameOverState.hpp"
 #include "StateMachine.hpp"
+#include "AssetManager.hpp"
 #include "globals.hpp"
 
 int main()
@@ -10,8 +11,9 @@ int main()
     sf::Time timeSinceLastFrame = sf::Time::Zero;
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(200, 200), "SFML works!");
     StateMachine* machine = new StateMachine();
+    AssetManager* assets = new AssetManager();
     
-    PlayState* play = new PlayState(window, machine);
+    PlayState* play = new PlayState(window, machine, assets);
     GameOverState* gameover = new GameOverState(window, machine);
    
     std::map<int, State*> states;

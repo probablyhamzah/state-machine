@@ -23,16 +23,6 @@ GameOverState::~GameOverState()
     std::cout << "gameoverstate destructor\n";
 }
 
-void GameOverState::enter(const State& state)
-{
-    std::cout << "gameoverstate enter\n";
-}
-
-void GameOverState::exit()
-{
-    std::cout << "gameoverstate exit\n";
-}
-
 void GameOverState::processInput()
 {
 }
